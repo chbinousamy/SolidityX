@@ -14,6 +14,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install z3
+      run: |
+        wget https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.12.1.tar.gz
+        tar -xzf z3-4.12.1.tar.gz
+        ls -l
+        cd z3-z3-4.12.1
+        python scripts/mk_make.py
+        cd build
+        make
+        sudo make install
     - name: Install build libs
       run: |
         sudo apt update
