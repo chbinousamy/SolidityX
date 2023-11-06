@@ -22,7 +22,7 @@ jobs:
         sudo apt install cmake
         sudo apt install libboost-all-dev
     - name: build
-    - run: |
+      run: |
         mkdir build
         cd build
         cmake ..
